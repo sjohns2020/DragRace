@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+
+
+
+
+body {
+  padding: 20px;
+  background-image: url("https://image.shutterstock.com/z/stock-photo-judges-panel-backdrop-for-us-drag-race-1909812565.jpg");
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+#container {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-items: center;
+  color: black;
+  font-style: bold;
+
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+div > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  border-radius: 10%;
 }
 
-.App-link {
-  color: #61dafb;
+div > header > img {
+  border-radius: 10%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div > article {
+  background-color: aquamarine;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-basis: center;
+  border-radius: 10%;
+ 
+ 
+
+}
+div > article > img {
+  border-radius: 10%;
+  max-height: auto;
+  max-width: 40em;
+}
+
+div > section {
+  align-content: center;
+  margin: 40px;
+  border-style: solid;
+  border-radius: 10%;
+  border-color: aquamarine;
+}
+
+#quote {
+  padding: 20px;
+  border: 5px;
+  border-color: black;
+}
+
+#winnerSection {
+  /* background-image: url("https://www.emmys.com/sites/default/files/styles/show_detail/public/logos/logo-rupauls-drag-race-2021-600x600.jpg?itok=j1ZRNPTQ"); */
+  background-color: aquamarine;
+  align-items: center;
+  text-align: center;
+
+}
+
+#winningImage {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  border-radius: 10%;
+}
+
+#winnersList {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+#winnerListLi {
+  
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-basis: auto;
+  background-color: white;
+  border-radius: 10%;
+
+}
+
+#selector {
+  margin: 5em;
+  padding: 5em;
+  background-color: aquamarine;
+
+  
 }
