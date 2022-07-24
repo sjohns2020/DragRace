@@ -27,7 +27,7 @@ div > div {
   border-radius: 10%;
 }
 
-div > header > img {
+div > header > a > img {
   border-radius: 10%;
 }
 
@@ -64,11 +64,14 @@ div > section {
 }
 
 #winnerSection {
-  /* background-image: url("https://www.emmys.com/sites/default/files/styles/show_detail/public/logos/logo-rupauls-drag-race-2021-600x600.jpg?itok=j1ZRNPTQ"); */
   background-color: aquamarine;
   align-items: center;
   text-align: center;
+}
 
+#winnerSection > h3 {
+  font-size: 50px;
+  
 }
 
 #winningImage {
@@ -86,7 +89,6 @@ div > section {
 }
 
 #winnerListLi {
-  
   margin: 2em;
   display: flex;
   flex-direction: column;
@@ -94,13 +96,41 @@ div > section {
   flex-basis: auto;
   background-color: white;
   border-radius: 10%;
-
 }
 
 #selector {
   margin: 5em;
   padding: 5em;
   background-color: aquamarine;
+}
+#missCListLi{
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-basis: auto;
+  background-color: white;
+  border-radius: 10%;
+}
+#missCImage {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  border-radius: 10%;
+}
 
-  
+#missCSection {
+  background-color: aquamarine;
+  align-items: center;
+  text-align: center;
+}
+#missCList {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+#missCSection > h3 {
+  font-size: 50px;
 }
