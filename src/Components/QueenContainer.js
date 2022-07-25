@@ -9,8 +9,9 @@ const QueenContainer = () => {
 
     const [queens, setQueens] = useState([]);
     const [selectedQueen, setSelectedQueen] = useState({});
-    const [showText, setshowText] = useState(false) // used for just one compontent
-    const [episode, setEpisode] = useState({})
+    const [showText, setshowText] = useState(true) // used for just one compontent
+    const [showTextt, setshowTextt] = useState(false) // used for just one compontent
+    const [episodes, setEpisodes] = useState([])
   
     const getQueens = () => {
       fetch("http://www.nokeynoshade.party/api/queens/all")
@@ -22,17 +23,19 @@ const QueenContainer = () => {
     getQueens();
     }, [])
 
-    // reference queen ID
+        // reference queen ID
     // then fetch the promis url with {queen.id} in it
-
-    const getEpisode = () => {
-      fetch(`http://www.nokeynoshade.party/api/queens/${queen.id}/episodes`)
+    const getEpisodes = () => {
+      let id = selectedQueen.id
+      fetch(`http://www.nokeynoshade.party/api/queens/4/episodes`)
       .then((response) => response.json())
-      .then((data) => setEpisode(data))
+      .then((data) => setEpisodes(data))
     }
     useEffect(() => {
-      getQueens();
+      getEpisodes();
       }, [])
+
+      // ${id}
 
 
 
@@ -50,15 +53,23 @@ const QueenContainer = () => {
     function toggleText() {
       setshowText(!showText)
     }
+    function toggleTextt() {
+      setshowTextt(!showTextt)
+    }
 
-    const textElement = showText ?  <WinningQueens queens={queens} /> : null
-        
+    const textElement = showText ?  <WinningQueens queens={queens} /> : null;
 
+    const textElementt = showTextt ?  <MissCongenieality queens={queens}/> : null;
+    
     const handleQueenChange = (id) => {
-        const foundQueen = queens.find((queen) => queen.id === parseInt(id))
-        setSelectedQueen(foundQueen)
-      }
-      
+      const foundQueen = queens.find((queen) => queen.id === parseInt(id))
+      setSelectedQueen(foundQueen)
+
+    }
+
+
+
+  
 
     return ( 
         <div id="container">
@@ -69,12 +80,14 @@ const QueenContainer = () => {
         </header>
     
         <QueenSelector queens={queens} handleQueenChange={handleQueenChange}/>
-        <QueenDetails selectedQueen={selectedQueen} />
+        <QueenDetails selectedQueen={selectedQueen} episodes={episodes} />
         <button onClick={toggleText}>All the winners</button>
         {textElement}
-        <MissCongenieality queens={queens}/>
+        <button onClick={toggleTextt}>All the Mrs MissCongenieality</button>
+        {textElementt}
         </div>
      );
 }
  
 export default QueenContainer;
+

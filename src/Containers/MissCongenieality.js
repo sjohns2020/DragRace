@@ -5,7 +5,7 @@ const MissCongenieality = ({queens}) => {
 
     const listOfMissCongeniealitys = missCongeniealitys.map((missCongeniealityy) => {
         return ( 
-            <li id="missCListLi">
+            <li id="missCListLi" key={missCongeniealityy.id}>
                 <img id="missCImage" src={missCongeniealityy.image_url} alt="" />
                 <p>{missCongeniealityy.name}</p>
             </li>

@@ -4,13 +4,15 @@ const WinningQueens = ({queens}) => {
 
     const listOfWinners = winners.map((winner) => {
         return ( 
-            <li id="winnerListLi">
+            <li id="winnerListLi" key={winner.id}>
                 <img id="winningImage" src={winner.image_url} alt="" />
                 <p>{winner.name}</p>
             </li>
         )
     })
     console.log(winners);
+
+    
     
     return ( 
         <section id="winnerSection">

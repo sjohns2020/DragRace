@@ -8,16 +8,17 @@ const QueenSelector = ({queens, handleQueenChange}) => {
 
     const queenOptions = queens.map((queen) => {
         return (
-            <option value={queen.id}>
+            <option value={queen.id} key={queen.id}>
                 {queen.name}
             </option>
         )
     })
+
     
     return ( 
-        <div id="selector">
+        <div id="selector" >
         <label htmlFor="changeQueen">Find Your Queen</label>
-        <select id="changeQueen" onChange={handleChange}>
+        <select id="changeQueen" onChange={handleChange} >
             {queenOptions}
         </select>
         </div>
